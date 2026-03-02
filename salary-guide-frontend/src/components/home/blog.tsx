@@ -110,7 +110,7 @@ const posts = [
 
 export default function BlogSection() {
   return (
-    <section className="min-h-screen bg-white px-6 py-16 font-sans">
+    <section className="min-h-[50vh] bg-white px-6 py-16 font-sans">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
