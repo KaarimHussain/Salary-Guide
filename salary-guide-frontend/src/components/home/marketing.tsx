@@ -12,7 +12,7 @@ const jobs = [
     logoImg: "KR",
     highlighted: false,
     logoComponent: (
-      <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center overflow-hidden flex-shrink-0">
+      <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center overflow-hidden shrink-0">
         <div className="flex flex-col items-center justify-center">
           <div className="w-6 h-3 bg-orange-500 rounded-sm" />
           <span className="text-[6px] font-bold text-gray-700 mt-0.5 tracking-tight">KINGS RIVER</span>
@@ -29,7 +29,7 @@ const jobs = [
     postedAt: "1 hour ago",
     highlighted: false,
     logoComponent: (
-      <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0">
+      <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center shrink-0">
         <span className="text-sm font-semibold text-gray-600">V</span>
       </div>
     ),
@@ -43,7 +43,7 @@ const jobs = [
     postedAt: "1 hour ago",
     highlighted: true,
     logoComponent: (
-      <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0">
+      <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center shrink-0">
         <span className="text-sm font-semibold text-gray-600">R</span>
       </div>
     ),
@@ -57,7 +57,7 @@ const jobs = [
     postedAt: "1 hour ago",
     highlighted: false,
     logoComponent: (
-      <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center overflow-hidden flex-shrink-0">
+      <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center overflow-hidden shrink-0">
         <div className="flex flex-col items-center">
           <div className="flex gap-0.5">
             <div className="w-1.5 h-3 bg-blue-400 rounded-sm" />
@@ -77,7 +77,7 @@ const jobs = [
     postedAt: "2 hours ago",
     highlighted: false,
     logoComponent: (
-      <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center flex-shrink-0 px-1">
+      <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center shrink-0 px-1">
         <div className="flex flex-col items-center leading-none">
           <span className="text-[7px] font-bold text-blue-700 tracking-tight">modern</span>
           <span className="text-[7px] font-bold text-blue-500 tracking-tight">campus</span>
@@ -87,25 +87,24 @@ const jobs = [
   },
 ];
 
-const WorkTypeBadge = ({ type }) => (
+const WorkTypeBadge = ({ type }: { type: string }) => (
   <span className="text-xs text-gray-600 border border-gray-200 rounded-full px-3 py-1 bg-white whitespace-nowrap">
     {type}
   </span>
 );
 
-const TimeBadge = ({ time }) => (
+const TimeBadge = ({ time }: { time: string }) => (
   <span className="text-xs text-gray-500 border border-gray-200 rounded-full px-3 py-1 bg-white whitespace-nowrap">
     {time}
   </span>
 );
 
-const JobRow = ({ job }) => (
+const JobRow = ({ job }: { job: typeof jobs[0] }) => (
   <div
-    className={`flex items-center gap-4 px-5 py-4 rounded-2xl border transition-all cursor-pointer hover:shadow-md ${
-      job.highlighted
+    className={`flex items-center gap-4 px-5 py-4 rounded-2xl border transition-all cursor-pointer hover:shadow-md ${job.highlighted
         ? "border-emerald-400 bg-white shadow-sm"
         : "border-gray-200 bg-white hover:border-gray-300"
-    }`}
+      }`}
   >
     {/* Logo */}
     {job.logoComponent}
@@ -113,9 +112,8 @@ const JobRow = ({ job }) => (
     {/* Info */}
     <div className="flex-1 min-w-0">
       <p
-        className={`font-semibold text-sm truncate ${
-          job.highlighted ? "text-emerald-600" : "text-gray-900"
-        }`}
+        className={`font-semibold text-sm truncate ${job.highlighted ? "text-emerald-600" : "text-gray-900"
+          }`}
       >
         {job.title}
       </p>
@@ -127,7 +125,7 @@ const JobRow = ({ job }) => (
     </div>
 
     {/* Badges */}
-    <div className="flex items-center gap-2 flex-shrink-0">
+    <div className="flex items-center gap-2 shrink-0">
       <WorkTypeBadge type={job.workType} />
       <TimeBadge time={job.postedAt} />
     </div>

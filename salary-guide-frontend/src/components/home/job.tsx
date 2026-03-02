@@ -1,4 +1,5 @@
 import { Search, ArrowRight } from "lucide-react";
+import React from "react";
 
 const companies = [
   { name: "Meta", bg: "#1877F2", text: "white", label: "Meta" },
@@ -16,7 +17,7 @@ const companies2 = [
   { name: "LinkedIn", bg: "#0A66C2", text: "white", label: "in" },
 ];
 
-const CompanyLogo = ({ company }) => (
+const CompanyLogo = ({ company }: { company: typeof companies[0] }) => (
   <div
     className="w-12 h-12 rounded-xl flex items-center justify-center text-sm font-bold shadow-sm"
     style={{ backgroundColor: company.bg, color: company.text }}
@@ -38,7 +39,7 @@ const GridBackground = () => (
   </div>
 );
 
-const Card = ({ children, className = "" }) => (
+const Card = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
   <div className={`bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden relative flex flex-col ${className}`}>
     {children}
   </div>
@@ -61,7 +62,7 @@ export default function HeroSection() {
             <GridBackground />
             <div className="relative z-10 mt-6 mx-auto max-w-xs">
               <div className="bg-white border border-gray-200 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
-                <Search className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                <Search className="w-4 h-4 text-gray-400 shrink-0" />
                 <span className="text-gray-600 text-sm">SEO Manager Salaries</span>
               </div>
             </div>
