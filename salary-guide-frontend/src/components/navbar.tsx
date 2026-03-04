@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,10 +37,11 @@ export default function Navbar() {
 
                 {/* Actions */}
                 <div className="hidden md:flex items-center gap-3 pr-1">
-                    <Link to="/signin" className="px-5 py-2 text-[14px] font-medium text-primary-foreground bg-primary hover:opacity-90 border border-transparent rounded-[8px] transition-all">
-                        Get Started
-                    </Link>
-
+                    <GetStartedModal>
+                        <button className="px-5 py-2 text-[14px] font-medium text-primary-foreground bg-primary hover:opacity-90 border border-transparent rounded-[8px] transition-all">
+                            Get Started
+                        </button>
+                    </GetStartedModal>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -60,12 +66,113 @@ export default function Navbar() {
                     </div>
 
                     <div className="flex flex-col gap-3 mt-2">
-                        <Link to="/signin" onClick={() => setIsMenuOpen(false)} className="w-full text-center px-5 py-3 text-[15px] font-medium text-primary-foreground bg-primary hover:opacity-90 border border-transparent rounded-[8px] transition-all">
-                            Get Started
-                        </Link>
+                        <GetStartedModal>
+                            <button onClick={() => setIsMenuOpen(false)} className="w-full text-center px-5 py-3 text-[15px] font-medium text-primary-foreground bg-primary hover:opacity-90 border border-transparent rounded-[8px] transition-all">
+                                Get Started
+                            </button>
+                        </GetStartedModal>
                     </div>
                 </div>
             )}
         </div>
+    );
+}
+
+// ==================
+// GET STARTED MODAL
+// ==================
+
+export function GetStartedModal({ children }: { children?: React.ReactNode }) {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <Dialog open={open} onOpenChange={setOpen}>
+            <DialogTrigger asChild>
+                {children || <Button>Get Started</Button>}
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[500px]">
+                <DialogHeader>
+                    <DialogTitle>Get Started</DialogTitle>
+                    <DialogDescription>
+                        Select a service and fill out the details to get started.
+                    </DialogDescription>
+                </DialogHeader>
+
+                <Tabs defaultValue="marketing" className="w-full mt-2">
+                    <TabsList className="grid w-full grid-cols-4">
+                        <TabsTrigger value="marketing">Marketing</TabsTrigger>
+                        <TabsTrigger value="technology">Technology</TabsTrigger>
+                        <TabsTrigger value="ecommerce">E-Commerce</TabsTrigger>
+                        <TabsTrigger value="tax">Tax Filing</TabsTrigger>
+                    </TabsList>
+
+                    <div className="mt-4 min-h-[220px]">
+                        <TabsContent value="marketing" className="space-y-4">
+                            <div className="grid gap-2">
+                                <Label htmlFor="marketing-company">Company Website</Label>
+                                <Input id="marketing-company" placeholder="https://example.com" />
+                            </div>
+                            <div className="grid gap-2">
+                                <Label htmlFor="marketing-budget">Monthly Budget ($)</Label>
+                                <Input id="marketing-budget" type="number" placeholder="5000" />
+                            </div>
+                            <div className="grid gap-2">
+                                <Label htmlFor="marketing-goal">Primary Goal</Label>
+                                <Input id="marketing-goal" placeholder="Increase brand awareness" />
+                            </div>
+                            <Button className="w-full mt-2">Submit Marketing Request</Button>
+                        </TabsContent>
+
+                        <TabsContent value="technology" className="space-y-4">
+                            <div className="grid gap-2">
+                                <Label htmlFor="tech-stack">Required Stack / Tech Need</Label>
+                                <Input id="tech-stack" placeholder="React, Node.js, AWS" />
+                            </div>
+                            <div className="grid gap-2">
+                                <Label htmlFor="tech-stage">Product Stage</Label>
+                                <Input id="tech-stage" placeholder="MVP / Scaling / Established" />
+                            </div>
+                            <div className="grid gap-2">
+                                <Label htmlFor="tech-email">Work Email</Label>
+                                <Input id="tech-email" type="email" placeholder="you@company.com" />
+                            </div>
+                            <Button className="w-full mt-2">Submit Technology Request</Button>
+                        </TabsContent>
+
+                        <TabsContent value="ecommerce" className="space-y-4">
+                            <div className="grid gap-2">
+                                <Label htmlFor="ecom-store">Store URL</Label>
+                                <Input id="ecom-store" placeholder="https://store.example.com" />
+                            </div>
+                            <div className="grid gap-2">
+                                <Label htmlFor="ecom-revenue">Average Monthly Revenue</Label>
+                                <Input id="ecom-revenue" placeholder="e.g. $10k - $50k" />
+                            </div>
+                            <div className="grid gap-2">
+                                <Label htmlFor="ecom-challenge">Biggest Challenge</Label>
+                                <Input id="ecom-challenge" placeholder="Cart abandonment, conversion rate..." />
+                            </div>
+                            <Button className="w-full mt-2">Submit E-Commerce Request</Button>
+                        </TabsContent>
+
+                        <TabsContent value="tax" className="space-y-4">
+                            <div className="grid gap-2">
+                                <Label htmlFor="tax-entity">Business Entity Type</Label>
+                                <Input id="tax-entity" placeholder="LLC, C-Corp, Sole Proprietorship" />
+                            </div>
+                            <div className="grid gap-2">
+                                <Label htmlFor="tax-revenue">Annual Revenue</Label>
+                                <Input id="tax-revenue" placeholder="Annual gross revenue" />
+                            </div>
+                            <div className="grid gap-2">
+                                <Label htmlFor="tax-location">Primary Operating Location</Label>
+                                <Input id="tax-location" placeholder="State / Country" />
+                            </div>
+                            <Button className="w-full mt-2">Submit Tax Filing Request</Button>
+                        </TabsContent>
+                    </div>
+                </Tabs>
+            </DialogContent>
+        </Dialog>
     );
 }
