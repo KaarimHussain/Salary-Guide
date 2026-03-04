@@ -67,7 +67,7 @@ export default function Navbar() {
 
                     <div className="flex flex-col gap-3 mt-2">
                         <GetStartedModal>
-                            <button onClick={() => setIsMenuOpen(false)} className="w-full text-center px-5 py-3 text-[15px] font-medium text-primary-foreground bg-primary hover:opacity-90 border border-transparent rounded-[8px] transition-all">
+                            <button className="w-full text-center px-5 py-3 text-[15px] font-medium text-primary-foreground bg-primary hover:opacity-90 border border-transparent rounded-[8px] transition-all">
                                 Get Started
                             </button>
                         </GetStartedModal>

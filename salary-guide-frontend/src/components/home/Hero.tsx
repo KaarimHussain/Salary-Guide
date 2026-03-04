@@ -6,7 +6,8 @@ import AmazonLogo from "@/assets/images/logos/Amazon.svg";
 import TiktokShopLogo from "@/assets/images/logos/Tiktok-Shop.svg";
 import GoogleLogo from "@/assets/images/logos/google-wordmark.svg";
 import MetaLogo from "@/assets/images/logos/meta.svg";
-import ShopifyLogo from "@/assets/images/logos/shopify-wordmark-light.svg";
+import ShopifyLogo from "@/assets/images/logos/Shopify.svg";
+import { Button } from "../ui/button";
 
 export default function Hero() {
     return (
@@ -30,9 +31,9 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 mb-5">
-                        <button className="px-8 py-3 bg-[#00b87c] hover:bg-[#00a36e] text-white text-[15px] font-semibold rounded-[8px] transition-all shadow-lg hover:-translate-y-0.5 w-full sm:w-auto">
+                        <Button className="cursor-pointer px-8 h-10 bg-primary hover:bg-secondary text-white text-[15px] font-semibold rounded-[8px] transition-all shadow-lg hover:-translate-y-0.5 w-full sm:w-auto">
                             Free Audit
-                        </button>
+                        </Button>
 
                     </div>
 
@@ -47,15 +48,15 @@ export default function Hero() {
                         Trusted data from marketers at
                     </p>
 
-                    <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 opacity-90">
-                        <img src={GoogleLogo} alt="Google" className="h-8 md:h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                        <img src={AmazonLogo} alt="Amazon" className="h-8 md:h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                        <img src={MetaLogo} alt="Meta" className="h-7 md:h-9 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                        <img src={TiktokShopLogo} alt="TikTok Shop" className="h-8 md:h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                        <img src={ShopifyLogo} alt="Shopify" className="h-8 md:h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
+                        <img src={GoogleLogo} alt="Google" className="h-8 md:h-10 object-contain transition-all duration-500 hover:rotate-360" />
+                        <img src={AmazonLogo} alt="Amazon" className="h-8 md:h-10 object-contain transition-all duration-500 hover:rotate-360" />
+                        <img src={MetaLogo} alt="Meta" className="h-7 md:h-9 object-contain transition-all duration-500 hover:rotate-360" />
+                        <img src={TiktokShopLogo} alt="TikTok Shop" className="h-8 md:h-10 object-contain transition-all duration-500 hover:rotate-360" />
+                        <img src={ShopifyLogo} alt="Shopify" className="h-8 md:h-10 object-contain transition-all duration-500 hover:rotate-360" />
 
                         {/* AI Service Logo */}
-                        <div className="flex items-center gap-2 text-white/80 hover:text-white transition-colors font-bold text-xl md:text-2xl tracking-tight">
+                        <div className="flex items-center gap-2 text-white font-bold text-xl md:text-2xl tracking-tight transition-all duration-500 hover:rotate-360">
                             <Brain className="w-8 h-8 md:w-9 md:h-9" />
                             <span>AI Service</span>
                         </div>
