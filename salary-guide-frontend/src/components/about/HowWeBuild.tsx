@@ -20,29 +20,29 @@ const steps = [
 ];
 
 const HowWeBuild = () => (
-    <section className="py-20 px-6 bg-white">
+    <section className="py-20 px-6 bg-background">
         <div className="max-w-3xl mx-auto">
-            <p className="text-center text-xs font-semibold tracking-widest text-gray-400 uppercase mb-3">Our Methodology</p>
-            <h2 className="text-center text-3xl sm:text-4xl font-bold text-gray-900 mb-3">How We Build the Guide</h2>
-            <p className="text-center text-gray-500 text-sm mb-12 max-w-lg mx-auto">
+            <p className="text-center text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-3">Our Methodology</p>
+            <h2 className="text-center text-3xl sm:text-4xl font-bold text-foreground mb-3">How We Build the Guide</h2>
+            <p className="text-center text-muted-foreground text-sm mb-12 max-w-lg mx-auto">
                 We combine trends in recruiting experience with data sources to create benchmarks that are thoroughly understood from a practitioner's lens.
             </p>
             <div className="flex flex-col gap-6">
                 {steps.map((s) => (
-                    <div key={s.num} className="flex items-start gap-5 p-6 rounded-2xl bg-gray-50 border border-gray-100">
+                    <div key={s.num} className="flex items-start gap-5 p-6 rounded-2xl bg-card border border-border">
                         <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0 ${s.color}`}>
                             {s.num}
                         </div>
                         <div>
-                            <h3 className="font-bold text-gray-900 mb-2">{s.title}</h3>
-                            <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+                            <h3 className="font-bold text-foreground mb-2">{s.title}</h3>
+                            <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
                         </div>
                     </div>
                 ))}
             </div>
-            <p className="text-center text-gray-400 text-sm mt-10">
+            <p className="text-center text-muted-foreground text-sm mt-10">
                 Have a question? Reach us at{" "}
-                <a href="mailto:support@salaryguide.com" className="text-emerald-600 hover:underline">
+                <a href="mailto:support@salaryguide.com" className="text-primary hover:underline">
                     support@salaryguide.com
                 </a>
             </p>

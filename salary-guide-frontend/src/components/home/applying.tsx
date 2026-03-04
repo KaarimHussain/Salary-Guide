@@ -28,7 +28,7 @@ const ExtensionMockup = () => (
       {/* Success Banner */}
       <div className="mx-3 mt-3 rounded-xl px-4 py-3" style={{ backgroundColor: "#16a34a" }}>
         <div className="flex items-center gap-2 mb-1">
-          <Sparkles className="w-4 h-4 text-yellow-300 flex-shrink-0" />
+          <Sparkles className="w-4 h-4 text-yellow-300 shrink-0" />
           <span className="text-white font-semibold text-sm">Autofill Complete!</span>
         </div>
         <p className="text-green-100 text-xs leading-relaxed">
@@ -45,7 +45,7 @@ const ExtensionMockup = () => (
           {/* Common Questions - complete */}
           <div className="flex items-center justify-between py-2.5 px-3 rounded-xl bg-gray-50">
             <div className="flex items-center gap-2.5">
-              <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+              <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
                 <Check className="w-3 h-3 text-emerald-600" strokeWidth={3} />
               </div>
               <span className="text-sm text-gray-700 font-medium">Common Questions</span>
@@ -56,7 +56,7 @@ const ExtensionMockup = () => (
           {/* Unique Questions - incomplete */}
           <div className="flex items-center justify-between py-2.5 px-3 rounded-xl bg-gray-50">
             <div className="flex items-center gap-2.5">
-              <div className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+              <div className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center shrink-0">
                 <AlertCircle className="w-3 h-3 text-amber-500" />
               </div>
               <span className="text-sm text-gray-700 font-medium">Unique Questions</span>
@@ -71,27 +71,26 @@ const ExtensionMockup = () => (
 
 export default function ChromeExtensionPromo() {
   return (
-    <section className="min-h-screen bg-gray-50 flex items-center px-6 py-16 font-sans">
+    <section className="min-h-screen bg-muted/30 flex items-center px-6 py-16 font-sans">
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* Left — Copy */}
         <div className="flex flex-col gap-6 max-w-lg">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight tracking-tight">
             Stop Typing. Start Applying.
           </h2>
-          <p className="text-gray-500 text-base leading-relaxed">
+          <p className="text-muted-foreground text-base leading-relaxed">
             Our Chrome extension auto-fills job applications on LinkedIn, Indeed,
             and more using your saved profile. Save hours every week and land your
             dream job faster.
           </p>
           <div className="flex items-center gap-3">
             <button
-              className="px-6 py-3 rounded-xl text-white font-semibold text-sm transition-all hover:opacity-90 active:scale-95"
-              style={{ backgroundColor: "#16a34a" }}
+              className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm transition-all hover:opacity-90 active:scale-95"
             >
               Add to Chrome
             </button>
-            <button className="px-6 py-3 rounded-xl text-gray-700 font-semibold text-sm border border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm transition-all">
+            <button className="px-6 py-3 rounded-xl text-foreground font-semibold text-sm border border-border bg-background hover:border-primary hover:shadow-sm transition-all">
               Learn more
             </button>
           </div>

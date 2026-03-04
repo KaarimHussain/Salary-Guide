@@ -16,23 +16,23 @@ const founders = [
 ];
 
 const Founders = () => (
-    <section className="py-20 px-6 bg-white">
+    <section className="py-20 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
-            <p className="text-center text-xs font-semibold tracking-widest text-gray-400 uppercase mb-3">Our Team</p>
-            <h2 className="text-center text-3xl sm:text-4xl font-bold text-gray-900 mb-12">Meet the Founders</h2>
+            <p className="text-center text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-3">Our Team</p>
+            <h2 className="text-center text-3xl sm:text-4xl font-bold text-foreground mb-12">Meet the Founders</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {founders.map((f) => (
-                    <div key={f.name} className="flex flex-col gap-4 bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <div key={f.name} className="flex flex-col gap-4 bg-muted/30 rounded-2xl p-6 border border-border">
                         <div className="flex items-center gap-4">
-                            <div className={`w-14 h-14 rounded-2xl ${f.bg} flex items-center justify-center text-xl font-bold text-gray-700`}>
+                            <div className={`w-14 h-14 rounded-2xl ${f.bg} flex items-center justify-center text-xl font-bold text-foreground`}>
                                 {f.initial}
                             </div>
                             <div>
-                                <p className="font-bold text-gray-900">{f.name}</p>
-                                <p className="text-emerald-600 text-xs font-medium">{f.role}</p>
+                                <p className="font-bold text-foreground">{f.name}</p>
+                                <p className="text-primary text-xs font-medium">{f.role}</p>
                             </div>
                         </div>
-                        <p className="text-gray-500 text-sm leading-relaxed">{f.bio}</p>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{f.bio}</p>
                     </div>
                 ))}
             </div>

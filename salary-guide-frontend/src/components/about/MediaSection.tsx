@@ -7,28 +7,28 @@ const mediaCoverage = [
 ];
 
 const MediaSection = () => (
-    <section className="py-16 px-6 bg-gray-50">
+    <section className="py-16 px-6 bg-muted/30">
         <div className="max-w-5xl mx-auto">
-            <p className="text-center text-xs font-semibold tracking-widest text-gray-400 uppercase mb-8">Media Coverage & Authority</p>
+            <p className="text-center text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-8">Media Coverage & Authority</p>
             <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                     <thead>
-                        <tr className="border-b border-gray-200">
-                            <th className="text-left py-2 pr-8 font-semibold text-gray-500 text-xs uppercase tracking-wide">Date</th>
-                            <th className="text-left py-2 pr-8 font-semibold text-gray-500 text-xs uppercase tracking-wide">Publication</th>
-                            <th className="text-left py-2 pr-8 font-semibold text-gray-500 text-xs uppercase tracking-wide">Focus Area</th>
-                            <th className="text-left py-2 font-semibold text-gray-500 text-xs uppercase tracking-wide">Impact Signal</th>
+                        <tr className="border-b border-border">
+                            <th className="text-left py-2 pr-8 font-semibold text-muted-foreground text-xs uppercase tracking-wide">Date</th>
+                            <th className="text-left py-2 pr-8 font-semibold text-muted-foreground text-xs uppercase tracking-wide">Publication</th>
+                            <th className="text-left py-2 pr-8 font-semibold text-muted-foreground text-xs uppercase tracking-wide">Focus Area</th>
+                            <th className="text-left py-2 font-semibold text-muted-foreground text-xs uppercase tracking-wide">Impact Signal</th>
                         </tr>
                     </thead>
                     <tbody>
                         {mediaCoverage.map((row, i) => (
-                            <tr key={i} className="border-b border-gray-100">
-                                <td className="py-3 pr-8 text-gray-500 text-xs">{row.date}</td>
+                            <tr key={i} className="border-b border-border/50">
+                                <td className="py-3 pr-8 text-muted-foreground text-xs">{row.date}</td>
                                 <td className="py-3 pr-8">
-                                    <span className="text-emerald-600 font-medium text-xs hover:underline cursor-pointer">{row.publication}</span>
+                                    <span className="text-primary font-medium text-xs hover:underline cursor-pointer">{row.publication}</span>
                                 </td>
-                                <td className="py-3 pr-8 text-gray-600 text-xs">{row.focus}</td>
-                                <td className="py-3 text-gray-600 text-xs">{row.impact}</td>
+                                <td className="py-3 pr-8 text-foreground text-xs">{row.focus}</td>
+                                <td className="py-3 text-foreground text-xs">{row.impact}</td>
                             </tr>
                         ))}
                     </tbody>

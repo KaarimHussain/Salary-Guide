@@ -65,19 +65,19 @@ export default function Hero() {
 
             </div>
             {/* Stats Count */}
-            <div className="bg-linear-to-b from-[#06180F] to-[#06180F] w-full py-15 px-4">
+            <div className="bg-background border-t border-border w-full py-15 px-4">
                 <div className="max-w-[1000px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-4">
                     <div className="flex flex-col items-center text-center">
-                        <span className="text-white font-bold text-4xl sm:text-[42px] tracking-tight mb-1">15,000+</span>
-                        <span className="text-white/60 text-[13px] font-medium tracking-wide">Salary Submissions</span>
+                        <span className="text-foreground font-bold text-4xl sm:text-[42px] tracking-tight mb-1">15,000+</span>
+                        <span className="text-muted-foreground text-[13px] font-medium tracking-wide">Salary Submissions</span>
                     </div>
                     <div className="flex flex-col items-center text-center">
-                        <span className="text-white font-bold text-4xl sm:text-[42px] tracking-tight mb-1">100,000+</span>
-                        <span className="text-white/60 text-[13px] font-medium tracking-wide">Marketing Jobs</span>
+                        <span className="text-foreground font-bold text-4xl sm:text-[42px] tracking-tight mb-1">100,000+</span>
+                        <span className="text-muted-foreground text-[13px] font-medium tracking-wide">Marketing Jobs</span>
                     </div>
                     <div className="flex flex-col items-center text-center">
-                        <span className="text-white font-bold text-4xl sm:text-[42px] tracking-tight mb-1">75,000+</span>
-                        <span className="text-white/60 text-[13px] font-medium tracking-wide">Companies Tracked</span>
+                        <span className="text-foreground font-bold text-4xl sm:text-[42px] tracking-tight mb-1">75,000+</span>
+                        <span className="text-muted-foreground text-[13px] font-medium tracking-wide">Companies Tracked</span>
                     </div>
                 </div>
             </div>

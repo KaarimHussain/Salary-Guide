@@ -60,7 +60,7 @@ const specialties = [
 // ── Sub-components ───────────────────────────────────────────────────────────
 
 const SearchInput = ({ placeholder }: any) => (
-  <div className="flex items-center gap-2 border border-gray-200 rounded-lg px-3 py-1.5 text-sm text-gray-500 bg-white hover:border-gray-300 cursor-pointer transition-colors w-44">
+  <div className="flex items-center gap-2 border border-border rounded-lg px-3 py-1.5 text-sm text-muted-foreground bg-background hover:border-primary cursor-pointer transition-colors w-44">
     <Search className="w-3.5 h-3.5 shrink-0" />
     <span>{placeholder}</span>
   </div>
@@ -68,45 +68,45 @@ const SearchInput = ({ placeholder }: any) => (
 
 const SectionHeader = ({ title, searchPlaceholder }: any) => (
   <div className="flex items-center justify-between mb-4">
-    <h2 className="text-xl font-bold text-gray-900">{title}</h2>
+    <h2 className="text-xl font-bold text-foreground">{title}</h2>
     <SearchInput placeholder={searchPlaceholder} />
   </div>
 );
 
 const RoleCard = ({ role }: any) => (
-  <button className="flex items-center gap-3 bg-white border border-gray-200 rounded-2xl px-4 py-4 hover:border-gray-300 hover:shadow-sm transition-all group w-full text-left">
+  <button className="flex items-center gap-3 bg-card border border-border rounded-2xl px-4 py-4 hover:border-primary hover:shadow-sm transition-all group w-full text-left">
     <div className={`w-10 h-10 rounded-xl ${role.color} flex items-center justify-center shrink-0`}>
       <Briefcase className={`w-5 h-5 ${role.iconColor}`} />
     </div>
     <div className="flex-1 min-w-0">
-      <p className="font-semibold text-gray-900 text-sm">{role.title}</p>
-      <p className="text-gray-500 text-xs">{role.median}</p>
+      <p className="font-semibold text-foreground text-sm">{role.title}</p>
+      <p className="text-muted-foreground text-xs">{role.median}</p>
     </div>
-    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 shrink-0" />
+    <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground shrink-0" />
   </button>
 );
 
 const CompanyCard = ({ company }: any) => (
-  <button className="flex items-center gap-3 bg-white border border-gray-200 rounded-2xl px-4 py-4 hover:border-gray-300 hover:shadow-sm transition-all group w-full text-left">
+  <button className="flex items-center gap-3 bg-card border border-border rounded-2xl px-4 py-4 hover:border-primary hover:shadow-sm transition-all group w-full text-left">
     <div className="shrink-0">{company.logo}</div>
     <div className="flex-1 min-w-0">
-      <p className="font-semibold text-gray-900 text-sm">{company.name}</p>
-      <p className="text-gray-500 text-xs">{company.range}</p>
+      <p className="font-semibold text-foreground text-sm">{company.name}</p>
+      <p className="text-muted-foreground text-xs">{company.range}</p>
     </div>
-    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 shrink-0" />
+    <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground shrink-0" />
   </button>
 );
 
 const SpecialtyCard = ({ specialty }: any) => (
-  <button className="flex items-center gap-3 bg-white border border-gray-200 rounded-2xl px-4 py-4 hover:border-gray-300 hover:shadow-sm transition-all group w-full text-left">
+  <button className="flex items-center gap-3 bg-card border border-border rounded-2xl px-4 py-4 hover:border-primary hover:shadow-sm transition-all group w-full text-left">
     <div className={`w-10 h-10 rounded-xl ${specialty.color} flex items-center justify-center shrink-0`}>
       <Sparkles className={`w-5 h-5 ${specialty.iconColor}`} />
     </div>
     <div className="flex-1 min-w-0">
-      <p className="font-semibold text-gray-900 text-sm">{specialty.title}</p>
-      <p className="text-gray-500 text-xs">{specialty.count}</p>
+      <p className="font-semibold text-foreground text-sm">{specialty.title}</p>
+      <p className="text-muted-foreground text-xs">{specialty.count}</p>
     </div>
-    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 shrink-0" />
+    <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground shrink-0" />
   </button>
 );
 
@@ -114,7 +114,7 @@ const SpecialtyCard = ({ specialty }: any) => (
 
 export default function SalaryExplorer() {
   return (
-    <div className="min-h-screen bg-white px-4 py-12 font-sans">
+    <div className="min-h-screen bg-background px-4 py-12 font-sans">
       <div className="max-w-5xl mx-auto space-y-12">
 
         {/* Marketing Salaries for Popular Roles */}
