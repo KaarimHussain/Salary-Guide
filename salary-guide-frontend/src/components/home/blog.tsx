@@ -90,33 +90,33 @@ const posts = [
     title: "A Marketer's Guide on How to Get Promoted",
     excerpt: "Tired of waiting for your next career move? This guide shows you how to get promoted by proving your value, building...",
     illustration: <PromotionIllustration />,
-    titleColor: "text-emerald-700",
+    titleColor: "text-primary",
   },
   {
     id: 2,
     title: "Average Salary Increase When Changing Jobs: What to Expect",
     excerpt: "Discover how average salary increase when changing jobs stacks up, with trends, strategies, and practical tips to...",
     illustration: <SalaryIllustration />,
-    titleColor: "text-gray-900",
+    titleColor: "text-foreground",
   },
   {
     id: 3,
     title: "How to Answer Salary Expectations With Confidence",
     excerpt: "Learn how to answer salary expectations with proven scripts and strategies. Our expert guide helps you negotiate...",
     illustration: <NegotiationIllustration />,
-    titleColor: "text-gray-900",
+    titleColor: "text-foreground",
   },
 ];
 
 export default function BlogSection() {
   return (
-    <section className="min-h-[50vh] bg-white px-6 py-16 font-sans">
+    <section className="min-h-[50vh] bg-background px-6 py-16 font-sans">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-4xl font-bold text-gray-900">Blog</h2>
-          <a href="#" className="text-emerald-600 text-sm font-medium hover:text-emerald-700 transition-colors">
+          <h2 className="text-4xl font-bold text-foreground">Blog</h2>
+          <a href="#" className="text-primary text-sm font-medium hover:opacity-80 transition-colors">
             View all posts →
           </a>
         </div>
@@ -126,7 +126,7 @@ export default function BlogSection() {
           {posts.map((post) => (
             <article key={post.id} className="flex flex-col gap-4 group cursor-pointer">
               {/* Illustration */}
-              <div className="w-full aspect-[380/200] rounded-2xl overflow-hidden">
+              <div className="w-full aspect-380/200 rounded-2xl overflow-hidden">
                 {post.illustration}
               </div>
 
@@ -135,10 +135,10 @@ export default function BlogSection() {
                 <h3 className={`font-semibold text-base leading-snug ${post.titleColor} group-hover:opacity-80 transition-opacity`}>
                   {post.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">
+                <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">
                   {post.excerpt}
                 </p>
-                <a href="#" className="text-emerald-600 text-sm font-medium hover:text-emerald-700 transition-colors mt-1 inline-block">
+                <a href="#" className="text-primary text-sm font-medium hover:opacity-80 transition-colors mt-1 inline-block">
                   Read article →
                 </a>
               </div>

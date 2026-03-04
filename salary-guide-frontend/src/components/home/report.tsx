@@ -24,24 +24,23 @@ const features = [
 export default function SalaryReportCTA() {
   return (
     <section
-      className="relative w-full min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
-      style={{ backgroundColor: "#0a2e1e" }}
+      className="relative w-full min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden bg-background"
     >
       {/* Subtle dot/noise texture overlay */}
       <div
         className="absolute inset-0 opacity-20"
         style={{
-          backgroundImage: `radial-gradient(circle, #1a4a30 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle, var(--color-primary) 1px, transparent 1px)`,
           backgroundSize: "28px 28px",
         }}
       />
 
       {/* Radial glow in center */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 opacity-15"
         style={{
           background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(16,90,50,0.45) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 60% at 50% 50%, var(--color-primary) 0%, transparent 70%)",
         }}
       />
 
@@ -49,22 +48,17 @@ export default function SalaryReportCTA() {
 
         {/* Badge */}
         <span
-          className="inline-block px-4 py-1.5 rounded-full border text-sm font-medium"
-          style={{
-            borderColor: "#2d7a4f",
-            color: "#4ade80",
-            backgroundColor: "rgba(45,122,79,0.15)",
-          }}
+          className="inline-block px-4 py-1.5 rounded-full border border-primary text-primary bg-primary/10 text-sm font-medium"
         >
           Free Report
         </span>
 
         {/* Heading */}
         <div className="space-y-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight">
             Get Your Custom Salary Report
           </h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
             Share your salary anonymously and unlock a personalized report showing exactly where
             you stand in the market compared to peers with your experience.
           </p>
@@ -75,13 +69,12 @@ export default function SalaryReportCTA() {
           {features.map(({ id, icon: Icon, title, description }) => (
             <div
               key={id}
-              className="flex flex-col gap-3 rounded-2xl p-5 text-left"
-              style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}
+              className="flex flex-col gap-3 rounded-2xl p-5 text-left bg-card border border-border"
             >
-              <Icon className="w-6 h-6" style={{ color: "#4ade80" }} />
+              <Icon className="w-6 h-6 text-primary" />
               <div>
-                <p className="font-semibold text-white text-sm mb-1">{title}</p>
-                <p className="text-gray-400 text-sm leading-snug">{description}</p>
+                <p className="font-semibold text-foreground text-sm mb-1">{title}</p>
+                <p className="text-muted-foreground text-sm leading-snug">{description}</p>
               </div>
             </div>
           ))}
@@ -89,8 +82,7 @@ export default function SalaryReportCTA() {
 
         {/* CTA Button */}
         <button
-          className="mt-2 px-8 py-3.5 rounded-full font-semibold text-white text-sm transition-all hover:opacity-90 active:scale-95"
-          style={{ backgroundColor: "#16a34a" }}
+          className="mt-2 px-8 py-3.5 rounded-full font-semibold text-primary-foreground bg-primary transition-all hover:opacity-90 active:scale-95"
         >
           Contribute &amp; Unlock Report
         </button>

@@ -20,20 +20,20 @@ const articles = [
 ];
 
 const ThoughtLeadership = () => (
-    <section className="py-20 px-6 bg-gray-50">
+    <section className="py-20 px-6 bg-muted/30">
         <div className="max-w-5xl mx-auto">
-            <p className="text-center text-xs font-semibold tracking-widest text-gray-400 uppercase mb-3">Thought Leadership</p>
-            <h2 className="text-center text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Market Research & Thought Leadership</h2>
-            <p className="text-center text-gray-500 text-sm mb-12 max-w-xl mx-auto">
+            <p className="text-center text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-3">Thought Leadership</p>
+            <h2 className="text-center text-3xl sm:text-4xl font-bold text-foreground mb-3">Market Research & Thought Leadership</h2>
+            <p className="text-center text-muted-foreground text-sm mb-12 max-w-xl mx-auto">
                 Our proprietary research identifies emerging workforce trends before they become mainstream, providing actionable intelligence to professionals and businesses worldwide.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {articles.map((a) => (
-                    <div key={a.tag} className="bg-white rounded-2xl border border-gray-100 p-6 flex flex-col gap-3 shadow-sm">
-                        <span className="inline-block text-xs font-semibold text-emerald-600 bg-emerald-50 rounded-full px-3 py-1 w-fit">{a.tag}</span>
-                        <h3 className="font-bold text-gray-900 text-base">{a.title}</h3>
-                        <p className="text-gray-500 text-sm leading-relaxed flex-1">{a.desc}</p>
-                        <a href="#" className="text-emerald-600 text-sm font-medium hover:text-emerald-700 transition-colors mt-auto">{a.cta}</a>
+                    <div key={a.tag} className="bg-card rounded-2xl border border-border p-6 flex flex-col gap-3 shadow-sm">
+                        <span className="inline-block text-xs font-semibold text-primary bg-primary/10 rounded-full px-3 py-1 w-fit">{a.tag}</span>
+                        <h3 className="font-bold text-foreground text-base">{a.title}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed flex-1">{a.desc}</p>
+                        <a href="#" className="text-primary text-sm font-medium hover:opacity-80 transition-colors mt-auto">{a.cta}</a>
                     </div>
                 ))}
             </div>

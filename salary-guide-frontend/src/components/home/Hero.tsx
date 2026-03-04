@@ -23,7 +23,7 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 mb-5">
-                        <button className="px-8 py-3 bg-[#00b87c] hover:bg-[#00a36e] text-white text-[15px] font-semibold rounded-[8px] transition-all shadow-lg hover:-translate-y-0.5 w-full sm:w-auto">
+                        <button className="px-8 py-3 bg-primary hover:opacity-90 text-primary-foreground text-[15px] font-semibold rounded-[8px] transition-all shadow-lg hover:-translate-y-0.5 w-full sm:w-auto">
                             Find Jobs
                         </button>
                         <button className="px-8 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white text-[15px] font-semibold rounded-[8px] transition-all shadow-lg hover:-translate-y-0.5 w-full sm:w-auto">
@@ -80,19 +80,19 @@ export default function Hero() {
 
             </div>
             {/* Stats Count */}
-            <div className="bg-linear-to-b from-[#06180F] to-[#06180F] w-full py-15 px-4">
+            <div className="bg-background border-t border-border w-full py-15 px-4">
                 <div className="max-w-[1000px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-4">
                     <div className="flex flex-col items-center text-center">
-                        <span className="text-white font-bold text-4xl sm:text-[42px] tracking-tight mb-1">15,000+</span>
-                        <span className="text-white/60 text-[13px] font-medium tracking-wide">Salary Submissions</span>
+                        <span className="text-foreground font-bold text-4xl sm:text-[42px] tracking-tight mb-1">15,000+</span>
+                        <span className="text-muted-foreground text-[13px] font-medium tracking-wide">Salary Submissions</span>
                     </div>
                     <div className="flex flex-col items-center text-center">
-                        <span className="text-white font-bold text-4xl sm:text-[42px] tracking-tight mb-1">100,000+</span>
-                        <span className="text-white/60 text-[13px] font-medium tracking-wide">Marketing Jobs</span>
+                        <span className="text-foreground font-bold text-4xl sm:text-[42px] tracking-tight mb-1">100,000+</span>
+                        <span className="text-muted-foreground text-[13px] font-medium tracking-wide">Marketing Jobs</span>
                     </div>
                     <div className="flex flex-col items-center text-center">
-                        <span className="text-white font-bold text-4xl sm:text-[42px] tracking-tight mb-1">75,000+</span>
-                        <span className="text-white/60 text-[13px] font-medium tracking-wide">Companies Tracked</span>
+                        <span className="text-foreground font-bold text-4xl sm:text-[42px] tracking-tight mb-1">75,000+</span>
+                        <span className="text-muted-foreground text-[13px] font-medium tracking-wide">Companies Tracked</span>
                     </div>
                 </div>
             </div>
