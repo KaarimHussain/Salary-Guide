@@ -1,5 +1,6 @@
 import { LinkedinIcon, TwitterIcon } from "lucide-react";
 
+
 export default function Footer() {
   const navLinks = [
     {
@@ -113,3 +114,6 @@ export default function Footer() {
     </footer>
   );
 }
+
+
+
