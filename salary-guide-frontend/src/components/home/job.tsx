@@ -1,147 +1,104 @@
-import { Search, ArrowRight } from "lucide-react";
-import React from "react";
-
-const companies = [
-  { name: "Meta", bg: "#1877F2", text: "white", label: "Meta" },
-  { name: "Salesforce", bg: "#00A1E0", text: "white", label: "SF" },
-  { name: "Adobe", bg: "#FF0000", text: "white", label: "Ai" },
-  { name: "Spotify", bg: "#1DB954", text: "white", label: "♪" },
-  { name: "Google", bg: "#4285F4", text: "white", label: "G" },
+const features = [
+  {
+    title: "Marketing",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    image: "/images/marketing.png",
+  },
+  {
+    title: "Technology",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    image: "/images/technology.png",
+  },
+  {
+    title: "E-Commerce",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    image: "/images/ecommerce.png",
+  },
+  {
+    title: "Tax Filing",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    image: "/images/tax-filing.png",
+  },
 ];
-
-const companies2 = [
-  { name: "TikTok", bg: "#000000", text: "white", label: "TT" },
-  { name: "Amazon", bg: "#FF9900", text: "white", label: "a" },
-  { name: "Netflix", bg: "#E50914", text: "white", label: "N" },
-  { name: "Airbnb", bg: "#FF5A5F", text: "white", label: "⌂" },
-  { name: "LinkedIn", bg: "#0A66C2", text: "white", label: "in" },
-];
-
-const CompanyLogo = ({ company }: { company: typeof companies[0] }) => (
-  <div
-    className="w-12 h-12 rounded-xl flex items-center justify-center text-sm font-bold shadow-sm"
-    style={{ backgroundColor: company.bg, color: company.text }}
-  >
-    {company.label}
-  </div>
-);
-
-const GridBackground = () => (
-  <div className="absolute inset-0 overflow-hidden text-border">
-    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-          <path d="M 32 0 L 0 0 0 32" fill="none" stroke="currentColor" strokeWidth="0.8" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)" />
-    </svg>
-  </div>
-);
-
-const Card = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
-  <div className={`bg-card rounded-2xl border border-border shadow-sm overflow-hidden relative flex flex-col ${className}`}>
-    {children}
-  </div>
-);
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen bg-background flex flex-col items-center justify-center px-4 py-16 font-sans">
-      {/* Heading */}
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground text-center mb-12 tracking-tight max-w-3xl leading-tight">
-        Know Your Worth. Find Your Role. Plan Your Path.
-      </h1>
+    <section className="min-h-screen py-30 bg-background font-sans overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-20 lg:mb-28 flex flex-col items-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-foreground tracking-tight leading-[1.15] mb-6">
+            Know Your Worth.<br className="hidden sm:block" />
+            <span className="text-primary">Find Your Role.</span> Plan Your Path.
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+            Equip yourself with the insights you need to make informed career decisions, negotiate effectively, and track your growth.
+          </p>
+        </div>
 
-        {/* Salary Data Card */}
-        <Card>
-          <div className="relative h-52 p-6 bg-muted/50">
-            <GridBackground />
-            <div className="relative z-10 mt-6 mx-auto max-w-xs">
-              <div className="bg-card border border-border rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
-                <Search className="w-4 h-4 text-muted-foreground shrink-0" />
-                <span className="text-foreground text-sm">SEO Manager Salaries</span>
-              </div>
-            </div>
-          </div>
-          <div className="p-6">
-            <h2 className="text-lg font-bold text-foreground mb-2">Salary Data</h2>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Real pay data from real marketers. Search by role or company and explore trends by location, experience, and work setting.
-            </p>
-            <a href="#" className="text-primary text-sm font-medium hover:opacity-80 flex items-center gap-1 mt-auto">
-              Explore Salaries <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </Card>
-
-        {/* Job Board Card */}
-        <Card>
-          <div className="relative h-52 p-6 bg-muted/50 flex items-center justify-center">
-            <GridBackground />
-            <div className="relative z-10 bg-card border border-border rounded-2xl p-4 shadow-sm w-64">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-9 h-9 bg-black rounded-lg flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                  </svg>
+        {/* Alternating Features */}
+        <div className="flex flex-col gap-24 lg:gap-32">
+          {features.map((feature, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <div
+                key={index}
+                className={`flex flex-col gap-12 lg:gap-16 items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                  }`}
+              >
+                {/* Text Content */}
+                <div className="flex-1 space-y-6 text-center lg:text-left w-full">
+                  <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-semibold text-primary mb-5 shadow-sm">
+                    Step 0{index + 1}
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+                    {feature.title}
+                  </h2>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+                  <div className="pt-4">
+                    <button className="inline-flex items-center justify-center rounded-lg text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-12 px-8">
+                      Explore {feature.title}
+                    </button>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">SEO Manager</p>
-                  <p className="text-xs text-muted-foreground">Apple</p>
+
+                {/* Image / Graphic Content */}
+                <div className="flex-1 w-full relative">
+                  {/* Decorative glow behind image */}
+                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[400px] max-h-[400px] bg-gradient-to-tr ${isEven ? 'from-primary/20 to-secondary/20' : 'from-secondary/20 to-primary/20'} rounded-full blur-[80px] -z-10`} />
+
+                  <div className="relative aspect-4/3 sm:aspect-video lg:aspect-5/4 rounded-2xl overflow-hidden shadow-2xl border border-border/60 bg-card group flex items-center justify-center">
+
+                    {/* Fallback pattern in case image is missing */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-muted/20 text-muted-foreground -z-10 transition-colors duration-500 group-hover:bg-muted/30">
+                      <div className="p-4 rounded-full bg-background border border-border/50 shadow-sm mb-4">
+                        <svg className="w-8 h-8 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium tracking-wide uppercase text-foreground/60">{feature.title} Display</span>
+                    </div>
+
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-full object-cover object-center relative z-0 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+
+                    {/* Inner highlight overlay */}
+                    <div className="absolute inset-0 border border-white/10 dark:border-black/10 rounded-2xl pointer-events-none z-10" />
+                  </div>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs bg-muted text-foreground px-2 py-0.5 rounded-full">Remote</span>
-                <span className="text-xs bg-muted text-foreground px-2 py-0.5 rounded-full">Full-time</span>
-                <span className="text-xs bg-muted text-foreground px-2 py-0.5 rounded-full">$110k–$150k</span>
-              </div>
-            </div>
-          </div>
-          <div className="p-6">
-            <h2 className="text-lg font-bold text-foreground mb-2">Job Board</h2>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Fresh marketing jobs added every day. Filter by agency vs. in-house, remote, experience level, and more to find the right fit.
-            </p>
-            <a href="#" className="text-primary text-sm font-medium hover:opacity-80 flex items-center gap-1 mt-auto">
-              Browse Jobs <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </Card>
-
-        {/* Company Intel Card */}
-        <Card>
-          <div className="relative h-52 p-6 bg-muted/50">
-            <GridBackground />
-            <div className="relative z-10 flex flex-col gap-3 mt-4">
-              <div className="flex items-center gap-3 justify-center">
-                {companies.map((c) => (
-                  <CompanyLogo key={c.name} company={c} />
-                ))}
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center text-muted-foreground text-lg">›</div>
-              </div>
-              <div className="flex items-center gap-3 justify-center">
-                {companies2.map((c) => (
-                  <CompanyLogo key={c.name} company={c} />
-                ))}
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center text-muted-foreground text-lg">›</div>
-              </div>
-            </div>
-          </div>
-          <div className="p-6">
-            <h2 className="text-lg font-bold text-foreground mb-2">Company Intel</h2>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Get the essentials on any company: team size, salary ranges, current openings, and how actively they're hiring.
-            </p>
-            <a href="#" className="text-primary text-sm font-medium hover:opacity-80 flex items-center gap-1 mt-auto">
-              View Companies <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </Card>
-
+            );
+          })}
+        </div>
       </div>
     </section>
   );

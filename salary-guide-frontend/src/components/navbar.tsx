@@ -26,10 +26,10 @@ export default function Navbar() {
 
                 {/* Links */}
                 <div className="hidden md:flex items-center gap-7">
-                    <Link to="/companies" className="text-muted-foreground hover:text-foreground transition-colors text-[14px] font-medium">Marketing</Link>
-                    <Link to="/salaries" className="text-muted-foreground hover:text-foreground transition-colors text-[14px] font-medium">Technology</Link>
-                    <Link to="/jobs" className="text-muted-foreground hover:text-foreground transition-colors text-[14px] font-medium">E-Commerce</Link>
-                    <Link to="/tools" className="text-muted-foreground hover:text-foreground transition-colors text-[14px] font-medium">Tax-filing</Link>
+                    <Link to="/marketing" className="text-muted-foreground hover:text-foreground transition-colors text-[14px] font-medium">Marketing</Link>
+                    <Link to="/technology" className="text-muted-foreground hover:text-foreground transition-colors text-[14px] font-medium">Technology</Link>
+                    <Link to="/e-commerce" className="text-muted-foreground hover:text-foreground transition-colors text-[14px] font-medium">E-Commerce</Link>
+                    <Link to="/tax-filing" className="text-muted-foreground hover:text-foreground transition-colors text-[14px] font-medium">Tax-filing</Link>
                     <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors text-[14px] font-medium">About</Link>
 
 
