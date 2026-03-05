@@ -68,7 +68,7 @@ export default function HeroSection() {
                 {/* Image / Graphic Content */}
                 <div className="flex-1 w-full relative">
                   {/* Decorative glow behind image */}
-                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[400px] max-h-[400px] bg-gradient-to-tr ${isEven ? 'from-primary/20 to-secondary/20' : 'from-secondary/20 to-primary/20'} rounded-full blur-[80px] -z-10`} />
+                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[400px] max-h-[400px] bg-linear-to-tr ${isEven ? 'from-primary/20 to-secondary/20' : 'from-secondary/20 to-primary/20'} rounded-full blur-[80px] -z-10`} />
 
                   <div className="relative aspect-4/3 sm:aspect-video lg:aspect-5/4 rounded-2xl overflow-hidden shadow-2xl border border-border/60 bg-card group flex items-center justify-center">
 

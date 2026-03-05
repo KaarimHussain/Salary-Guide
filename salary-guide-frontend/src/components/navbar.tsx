@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
+import Logo from "@/assets/images/logos/web-logo.png";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,14 +15,8 @@ export default function Navbar() {
             <nav className="flex items-center justify-between w-full max-w-[1000px] px-3 py-2.5 bg-background/90 backdrop-blur-md rounded-2xl shadow-lg border border-border/50">
 
                 {/* Logo */}
-                <Link to="/" className="flex items-center gap-2 pl-3">
-                    {/* Logo icon (green bars) */}
-                    <div className="flex items-end gap-[3px] h-[20px] pb-px">
-                        <div className="w-[4px] h-[10px] bg-primary rounded-[1px]" />
-                        <div className="w-[4px] h-[15px] bg-primary rounded-[1px]" />
-                        <div className="w-[4px] h-[20px] bg-primary rounded-[1px]" />
-                    </div>
-                    <span className="text-foreground font-semibold text-[17px] tracking-tight">SalaryGuide</span>
+                <Link to="/">
+                    <img src={Logo} alt="Logo" className="h-14 object-cover" />
                 </Link>
 
                 {/* Links */}
